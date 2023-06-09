@@ -44,14 +44,15 @@ const Upload = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Upload File</h2>
-      <form onSubmit={handleUpload}>
-        <input type="file" onChange={handleFileChange} />
-        <button type="submit">Upload</button>
-      </form>
-      <FileList files={files} setFiles={setFiles} />
-    </div>
+      <div className='m-16'>
+          <label class="block mb-2 text-lg font-medium text-gray-900 " for="file_input">Upload file</label>
+        <form className='flex' onSubmit={handleUpload}>
+          <input class="block w-96 text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" type="file" onChange={handleFileChange} />
+          <button className='mt-2 ml-4 border border-solid w-28 h-10 rounded-lg bg-gray-700 text-white' type="submit">Upload</button>
+        </form>
+          <p class="mt-1 text-sm text-gray-500 " id="file_input_help">SVG, PNG, JPG or GIF.</p>
+        <FileList files={files} setFiles={setFiles} />
+      </div>
   );
 };
 
